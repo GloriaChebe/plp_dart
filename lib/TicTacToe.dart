@@ -45,32 +45,31 @@ void main() {
 }
 
 void printBoard(List<String> board) {
-  // Function to print the current state of the board
+ 
   print('');
   for (int i = 0; i < 9; i += 3) {
-    print(' ${board[i]} | ${board[i + 1]} | ${board[i + 2]} '); // Print the rows of the board
-    if (i < 6) print('-----------'); // Print horizontal lines except for the last row
+    print(' ${board[i]} | ${board[i + 1]} | ${board[i + 2]} '); 
+    if (i < 6) print('-----------'); 
   }
   print('');
 }
 
 bool checkWin(List<String> board) {
-  // Function to check if there is a winner
-  // Check rows
+  
   for (int i = 0; i < 9; i += 3) {
     if (board[i] != ' ' && board[i] == board[i + 1] && board[i] == board[i + 2]) {
       return true;
     }
   }
 
-  // Check columns
+  
   for (int i = 0; i < 3; i++) {
     if (board[i] != ' ' && board[i] == board[i + 3] && board[i] == board[i + 6]) {
       return true;
     }
   }
 
-  // Check diagonals
+  
   if (board[0] != ' ' && board[0] == board[4] && board[0] == board[8]) {
     return true;
   }
